@@ -132,6 +132,30 @@ width:100%;
   }
 }
 <!--glowing text style end-->
+
+</style>
+
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  position:fixed;
+  background-color:violet;
+}
 </style>
 
 <style>
@@ -176,8 +200,16 @@ function closeNav() {
 <div class="topnav">
   <a class="active" href="https://prateekkv.github.io/prateek/">Home</a>
   <a href="#news">Achievements</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+<a href="#about">About</a>
+
+<div class="dropdown">
+  <a href="#contact">contact</a>
+  <div class="dropdown-content">
+  <oi><a href="mailto:prateekkv14@gmail.com">Gmail</a>
+  <a href="tel:+918867913376">Phone</a>
+  </oi></div>
+</div>
+
 </div>
 <!--top menu body end-->
 
