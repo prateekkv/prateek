@@ -322,8 +322,8 @@ window.onclick = function(event) {
 I am Prateek KV, Persuing B.Tech in Computer Science And Engineering(2017-2021) at
 <a href="https://www.presidencyuniversity.in" target="_blank">Presidency University Bengaluru</a>.<br>
 I have completed my 12th(2015-2017) in Stream(Physics,Chemistry,Mathematics,Computer Science, 
-English And Sanskrit) at <a href="https://narayanajuniorcolleges.com/"target="_blank">Narayana PU College</a>.<br>
-I have completed my 10th(2015) at <a href="https://www.adventistyearbook.org/entity?EntityID=30118"target="_blank">Seventh-Day Adventist</a>.
+English And Sanskrit) at <a href="https://narayanajuniorcolleges.com/" target="_blank">Narayana PU College</a>.<br>
+I have completed my 10th(2015) at <a href="https://www.adventistyearbook.org/entity?EntityID=30118" target="_blank">Seventh-Day Adventist</a>.
 
 
 
