@@ -1,5 +1,5 @@
 <html>
-<title>PRATEEK K V</title>
+<title>Prateek K V</title>
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -208,10 +208,41 @@ background-color:lightgrey;
 }
 </style>
 
+<!-- Split style start-->
+<style>
+
+.splitt {
+  height: ;
+  top: 20%;
+  width: 60%;
+  position: absolute;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.leftt {
+  left: 0;
+  background-color: ;
+}
+
+.rightt {
+  right: 0;
+  background-color: ;
+}
+
+.centerr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+</style>
 </head>
 
 <body id="clsfnt">
-
+<div class="split right">
 <!-- page loader animation initialization start-->
 <div id="loader" class="center"></div>
 <!-- page loader animation initialization end-->
@@ -228,7 +259,7 @@ background-color:lightgrey;
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p4 style="font-size:30px;"> I am Prateek KV, Studied B.Tech in Computer Science And Engineering at Presidency University, I had Completed my plus two from Narayana PU College. I am passionate to start my career and to give best out of me to the Company</p4>
+    <p4 style="font-size:30px;"> I am Prateek KV, Started my career as a QA Engineer at Talent Recruit Software Pvt Ltd. I have completed B.Tech from Presidency University Bengaluru in Computer Science And Engineering</p4>
   </div>
 
 </div>
@@ -237,9 +268,9 @@ background-color:lightgrey;
 <div class="dropdown">
   <a href="#">contact</a>
   <div class="dropdown-content">
-  <oi><a href="mailto:prateekkv14@gmail.com">Gmail</a>
+  <ol><a href="mailto:prateekkv14@gmail.com">Gmail</a>
   <a href="tel:+918867913376">Phone</a>
-  </oi></div>
+  </ol></div>
 </div>
 
 </div>
@@ -260,7 +291,7 @@ function closeNav() {
 <!--top menu body start-->
 <div class="topnav">
   <a class="active" href="https://prateekkv.github.io/prateek/">Home</a>
-  <a href="https://prateekkv.github.io/prateek-achievements/">Achievements</a>
+  <a href="https://prateekkv.github.io/prateek-achievements/" target="_blank">Achievements</a>
   <a href="https://prateekkv.github.io/prateek-project/" target="_blank">Project</a>
 
 
@@ -316,35 +347,132 @@ window.onclick = function(event) {
 
 
 </pre>
-<p1><b><i><marquee style="font-size:20pt; height=35px; width=100%" scrollamount="12"  direction="left" behavior="" bgcolor="cyan"  onmouseover="this.stop()" onmouseout="this.start()">HELLO! WELCOME!!</marquee></i></b></p1>
+<p1><b><i><marquee style="font-size:20pt; height=35px; width=100%" scrollamount="12"  direction="left" position="fixed" behavior="" bgcolor="cyan"  onmouseover="this.stop()" onmouseout="this.start()">HELLO! WELCOME!!</marquee></i></b></p1>
 <pre>
+</pre>
+
+<!-- left side-->
+
+<pre>
+<h1>Prateek K V</h1>
+
+<h1 style="color:blue;"><mark>Experience:</mark></h1><p style="font-size:22px;"><a href="https://www.talentrecruit.com/"target="_blank">Talent Recruit Software Pvt Ltd</a>, Bengaluru 
+June 2021 - PRESENT
+Designation: QA Engineer
+</p>
+
+<h1 style="color:blue;">Education:</h1><p style="font-size:22px;"><a href="https://www.presidencyuniversity.in" target="_blank">Presidency University</a>, Bengaluru
+August 2017 - June 2021
+Bachelors Of Technology in 
+Computer Science And Engineering
+
+<a href="https://narayanajuniorcolleges.com/"target="_blank">Narayana PU College</a>, Bengaluru
+June 2015 - March 2017
+Physics, Chemistry, Mathematics,
+Computer Science, English, Sanskrit
+
+<a href="https://www.adventistyearbook.org/entity?EntityID=30118" target="_blank">Seventh-Day Adventist</a>, Bengaluru
+2015 batch
+Mathematics, Science, Social Science
+English, Kannada, Hindi
+</p>
+
+
+
+
 
 </pre>
 
+<div class="splitt rightt">
 <div class="divfnt">
-<pre>Welcome and Thank You! for visiting. Hope you have good time browsing the site!
 
-I am Prateek KV, completed my B.Tech in Computer Science And Engineering(2017-2021) at
-<a href="https://www.presidencyuniversity.in" target="_blank">Presidency University Bengaluru</a>.<br>
-I have completed my 12<sup>th</sup>(2015-2017) in Stream(Physics,Chemistry,Mathematics,Computer Science, 
-English And Sanskrit) at <a href="https://narayanajuniorcolleges.com/"target="_blank">Narayana PU College</a>.<br>
-I have completed my 10<sup>th</sup>(2015) at <a href="https://www.adventistyearbook.org/entity?EntityID=30118"target="_blank">Seventh-Day Adventist</a>.
+<!--whatsapp start-->
+<script>
+function whatsapp() {
+var message = document.whatsapp_chat.message;
+if (message.value == "")
+    {
+        alert("Please type some message.");
+        message.focus();
+        return false;
+    }
+else
+  {
+  let message = document.whatsapp_chat.message.value;
+  let url = "https://wa.me/918867913376";
+  let end_url = `${url}?text=${message}`;
+  window.open(end_url);
+ }    
+}
+</script>
+
+<center><h1>Send a whatsapp message</h1>
+<form name="whatsapp_chat" onsubmit="return validate_activity()">
+  
+  <label for="message"> </label>
+  <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75"></textarea> <br>
+  <br>
+  <input type="submit" value="Send" onclick="whatsapp()" style="cursor:pointer">
+  <input type="reset" value="Reset" style="cursor:pointer">
+</center>
+</form>
+<hr>
+<!--whatsapp end-->
 
 
 
-<center style="background-color:cyan;width:100%"><a href="https://www.instagram.com/prateek14_" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1AQr6MYvJBhDhjA9tbIxtcNwlgJ0vS2iz"width="50" height="50"></a> <a href="https://www.facebook.com/profile.php?id=100005924508004" target="_blank"><img src="https://drive.google.com/uc?export=view&id=11oxk6JGADHLUC9JNsEVlSH2aunwiui9_"width="50" height="50"></a> <a href="https://api.whatsapp.com/send?phone=918867913376" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1YlvVrQbFFO9icXMJxU00NtnRx-F3OpMk"width="50" height="50"></a> <a href="mailto:prateekkv14@gmail.com" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1yhpJ458DtEdrUCFnVGrYYepphElRitT_"width="50" height="50"></a> <a href="https://www.linkedin.com/in/prateek-kv-7352501b3" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1PIDPQB3OLwSItHU5oCMQdapyT68cVk4H"width="50" height="50"></a></center>
-
-</pre></div>
 
 
 
+</p></div>
+
+
+<!--mail start-->
+<script>
+function mail() {
+var message = document.mail_send.message;
+if (message.value == "" || body.value=="")
+    {
+        alert("Please type both Subject and Body!");
+        message.focus();
+        return false;
+    }
+else
+  {
+  let message = document.mail_send.message.value;
+  let body = document.mail_send.body.value;
+  let url = "mailto:mymailacc99@gmail.com";
+  let end_url = `${url}?subject=${message}&body=${body}`;
+  
+  window.open(end_url);
+ }    
+}
+</script>
+
+<center><h1>Send Mail</h1>
+<form name="mail_send" onsubmit="return validate_activity()">
+  
+  <label for="message">Subject: </label>
+  <textarea type="text" id="message" placeholder="Type Subject Here" rows="2" cols="50"></textarea> <br>
+  <br>
+  <label for="body">Body:  </label>
+  <textarea type="text" id="body" placeholder="Type a message here" rows="4" cols="50"></textarea> <br><br>
+  <input type="submit" value="Send" onclick="mail()" style="cursor:pointer">
+  <input type="reset" value="Reset" style="cursor:pointer">
+</center>
+</form>
+<!--mail end-->
+
+<br><br>
+<center style="background-color:violet;width:100%"><a href="https://www.instagram.com/prateek14_" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1AQr6MYvJBhDhjA9tbIxtcNwlgJ0vS2iz"width="50" height="50"></a> <a href="https://www.facebook.com/profile.php?id=100005924508004" target="_blank"><img src="https://drive.google.com/uc?export=view&id=11oxk6JGADHLUC9JNsEVlSH2aunwiui9_"width="50" height="50"></a> <a href="https://api.whatsapp.com/send?phone=918867913376" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1YlvVrQbFFO9icXMJxU00NtnRx-F3OpMk"width="50" height="50"></a> <a href="mailto:prateekkv14@gmail.com" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1yhpJ458DtEdrUCFnVGrYYepphElRitT_"width="50" height="50"></a> <a href="https://www.linkedin.com/in/prateek-kv-7352501b3" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1PIDPQB3OLwSItHU5oCMQdapyT68cVk4H"width="50" height="50"></a></center>
 
 
 
 
 
 
-
+</div>
+<!--splitting of screen end-->
 <!-- page loader ending start-->
 <script> 
         document.onreadystatechange = function() { 
@@ -362,6 +490,5 @@ I have completed my 10<sup>th</sup>(2015) at <a href="https://www.adventistyearb
         }; 
     </script>
 <!-- page loader ending end-->
-
 </body>
 </html>
