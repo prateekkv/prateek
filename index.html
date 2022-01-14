@@ -240,7 +240,70 @@ background-color:lightgrey;
 }
 
 </style>
+
+<style>
+		.anim {
+			
+			position: absolute;
+			transform: translateX(-50%) translateY(-50%);
+		}
+	
+		.anim span {
+			
+			font-size: 24px;
+			color: green;
+			display: inline-block;
+			transition: all 0.5s;
+			animation: animate 6s infinite;
+		}
+		.anim span:nth-child(1) {
+			animation-delay: 0.1s;
+		}
+		.anim span:nth-child(2) {
+			animation-delay: 0.3s;
+		}
+		.anim span:nth-child(3) {
+			animation-delay: 0.5s;
+		}
+		.anim span:nth-child(4) {
+			animation-delay: 0.7s;
+		}
+				
+	
+		@keyframes animate {
+			0% {
+				color: green;
+				transform: translateY(0);
+				margin-top: 14px;
+				margin-left: 0;
+			}
+			25% {
+				color: red;
+				transform: translateY(-15px);
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+
+			50% {
+				color: brown;
+				transform: translateY(-15px);
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			100% {
+				color: blue;
+				transform: translateY(-15px);
+				margin-top: 10px;
+				margin-left: 10;
+			}
+		}	
+	</style>
 </head>
+
+</head>
+
+
+
 
 <body id="clsfnt">
 <div class="split right">
@@ -413,8 +476,13 @@ else
   <label for="message"> </label>
   <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75"></textarea> <br>
   <br>
-  <input type="submit" value="Send" onclick="whatsapp()" style="cursor:pointer">
-  <input type="reset" value="Reset" style="cursor:pointer">
+  <button div class="anim" onclick="whatsapp()" style="cursor:pointer">
+ 		<span>S</span>
+		<span>E</span>
+		<span>N</span>
+		<span>D</span></div></button><br><br>
+<center><input type="reset" value="Reset" style="cursor:pointer"></center>
+		
 </center>
 </form>
 <hr>
@@ -425,7 +493,7 @@ else
 
 
 
-</p></div>
+
 
 
 <!--mail start-->
@@ -442,7 +510,7 @@ else
   {
   let message = document.mail_send.message.value;
   let body = document.mail_send.body.value;
-  let url = "mailto:mymailacc99@gmail.com";
+  let url = "mailto:prateekkv14@gmail.com";
   let end_url = `${url}?subject=${message}&body=${body}`;
   
   window.open(end_url);
@@ -457,9 +525,13 @@ else
   <textarea type="text" id="message" placeholder="Type Subject Here" rows="2" cols="50"></textarea> <br>
   <br>
   <label for="body">Body:  </label>
-  <textarea type="text" id="body" placeholder="Type a message here" rows="4" cols="50"></textarea> <br><br>
-  <input type="submit" value="Send" onclick="mail()" style="cursor:pointer">
-  <input type="reset" value="Reset" style="cursor:pointer">
+  <textarea type="text" id="body" placeholder="Type a message here" rows="4" cols="50"></textarea> <br><br><br>
+  <button class="anim" onclick="mail()" style="cursor:pointer" >
+		<span>S</span>
+		<span>E</span>
+		<span>N</span>
+		<span>D</span></button><br><br>
+<center><input type="reset" value="Reset" style="cursor:pointer"></center>
 </center>
 </form>
 <!--mail end-->
