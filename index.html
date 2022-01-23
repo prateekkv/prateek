@@ -3,9 +3,7 @@
 <title>Prateek K V</title>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
     
 
 <style>
@@ -219,33 +217,21 @@ background-color:lightgrey;
   position: absolute;
   overflow-x: hidden;
   padding-top: 20px;
-  margin:auto;
+  z-index: 1;
 }
 
 .leftt {
   left: 0;
-  width: 50%;
   background-color: ;
-  margin:auto;
 }
 
 .rightt {
   
-  position: absolute;
-  left: 50%;
-  width: 50%;
+  right: 0;
   background-color: ;
-  margin:auto;
+  
 }
 
-.centerr {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  margin:auto;
-}
 
 </style>
 
@@ -424,7 +410,7 @@ window.onclick = function(event) {
 </pre>
 
 <!-- left side-->
-
+<div class="splitt leftt">
 <pre>
 <h1>Prateek K V</h1>
 
@@ -454,7 +440,7 @@ English, Kannada, Hindi
 
 
 </pre>
-
+</div>
 <div class="splitt rightt">
 <div class="divfnt">
 
@@ -551,7 +537,7 @@ else
 
 
 
-
+</div>
 </div>
 <!--splitting of screen end-->
 <!-- page loader ending start-->
