@@ -291,10 +291,53 @@ background-color:lightgrey;
 			}
 		}	
 	</style>
-</head>
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3))
+{
+        alert("Right Click is disabled!");
+         return false;
+    }
+ 
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+
+<script>  
+document.onkeydown = function (event) {  
+event = (event || window.event);  
+if (event.keyCode == 123)  {  
+alert("F12 is disabled");
+return false;  
+}  
+else if(event.ctrlKey && event.shiftKey && event.keyCode == 67)
+    {
+        alert("crtl+shift+c is disabled")
+        return false; 
+    }
+else if(event.ctrlKey && event.shiftKey && event.keyCode == 73)
+    {
+        alert("crtl+shift+i is disabled")
+        return false; 
+    }
+else if(event.ctrlKey && event.keyCode == 85)
+    {
+        alert("crtl+u is disabled")
+        return false; 
+    }
+}  
+</script>
 
 </head>
-
 
 
 
