@@ -316,26 +316,57 @@ document.onmouseup = mousehandler;
 document.onkeydown = function (event) {  
 event = (event || window.event);  
 if (event.keyCode == 123)  {  
-alert("F12 is disabled");
-return false;  
+return {first:false, second:alert("F12 is disabled")};  
 }  
 else if(event.ctrlKey && event.shiftKey && event.keyCode == 67)
     {
-        alert("crtl+shift+c is disabled")
-        return false; 
+        return false;
+	alert("crtl+shift+c is disabled");
     }
 else if(event.ctrlKey && event.shiftKey && event.keyCode == 73)
     {
-        alert("crtl+shift+i is disabled")
-        return false; 
+        return false;
+	alert("crtl+shift+i is disabled");
     }
 else if(event.ctrlKey && event.keyCode == 85)
     {
-        alert("crtl+u is disabled")
-        return false; 
+	return false;
+        alert("crtl+u is disabled"); 
+    }
+else if(event.ctrlKey && event.shiftKey && event.keyCode == 75)
+    {
+	return false;
+        alert("crtl+shift+k is disabled"); 
     }
 }  
 </script>
+
+<!--Style for scroll up button-->
+<style>
+html {
+  scroll-behavior: smooth;
+}
+#myBtnn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtnn:hover {
+  color: black;
+  background-color: green;
+}
+</style>
 
 </head>
 
@@ -514,7 +545,7 @@ else
   <label for="message"> </label>
   <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75"></textarea> <br>
   <br>
-  <button div class="anim" onclick="whatsapp()" style="cursor:pointer">
+  <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px">
  		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -564,7 +595,7 @@ else
   <br>
   <label for="body">Body:  </label>
   <textarea type="text" id="body" placeholder="Type a message here" rows="4" cols="50"></textarea> <br><br><br>
-  <button class="anim" onclick="mail()" style="cursor:pointer" >
+  <button class="anim" onclick="mail()" style="cursor:pointer; border-radius:12px" >
 		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -583,6 +614,31 @@ else
 
 </div>
 </div>
+
+<!--Scroll button start-->
+<button onclick="topFunction()" id="myBtnn" >Top</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtnn");
+
+// When the user scrolls down 10px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
 <!--splitting of screen end-->
 <!-- page loader ending start-->
 <script> 
@@ -601,5 +657,9 @@ else
         }; 
     </script>
 <!-- page loader ending end-->
+
+
+
+
 </body>
 </html>
