@@ -303,7 +303,7 @@ var eventbutton = (isNS) ? myevent.which : myevent.button;
 if((eventbutton==2)||(eventbutton==3))
 {
         alert("Right Click is disabled!");
-         return false;
+        return false;
     }
  
 }
@@ -316,7 +316,8 @@ document.onmouseup = mousehandler;
 document.onkeydown = function (event) {  
 event = (event || window.event);  
 if (event.keyCode == 123)  {  
-return {first:false, second:alert("F12 is disabled")};  
+return false;
+alert("F12 is disabled");
 }  
 else if(event.ctrlKey && event.shiftKey && event.keyCode == 67)
     {
@@ -372,7 +373,7 @@ html {
 
 
 
-<body id="clsfnt">
+<body id="clsfnt" onload="startTime()">
 
 <!-- page loader animation initialization start-->
 <div id="loader" class="center"></div>
@@ -508,8 +509,28 @@ Mathematics, Science, Social Science
 English, Kannada, Hindi
 </p>
 
+<hr>
+<!-- Time start-->
+<div id="txt" style="font-size:20px;"></div>
 
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  "Current Time- " + h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
 
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+<!--Time end-->
 
 
 </pre>
