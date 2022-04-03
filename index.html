@@ -267,26 +267,26 @@ background-color:lightgrey;
 			0% {
 				color: green;
 				transform: translateY(0);
-				margin-top: 14px;
+				margin-top: 20px;
 				margin-left: 0;
 			}
 			25% {
 				color: red;
 				transform: translateY(-15px);
-				margin-top: 10px;
+				margin-top: 12px;
 				margin-left: 10px;
 			}
 
 			50% {
 				color: brown;
 				transform: translateY(-15px);
-				margin-top: 10px;
+				margin-top: 15px;
 				margin-left: 10px;
 			}
 			100% {
 				color: blue;
 				transform: translateY(-15px);
-				margin-top: 10px;
+				margin-top: 20px;
 				margin-left: 10;
 			}
 		}	
@@ -369,6 +369,18 @@ html {
 }
 </style>
 
+<style>
+.arrow {
+border: solid black;
+border-width: 0 3px 3px 0;
+display: inline-block;
+padding: 3px;
+}
+.up {
+transform: rotate(-135deg);
+-webkit-transform: rotate(-135deg);
+}
+</style>
 </head>
 
 
@@ -566,7 +578,7 @@ else
   <label for="message"> </label>
   <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75"></textarea> <br>
   <br>
-  <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px">
+  <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px;">
  		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -637,7 +649,7 @@ else
 </div>
 
 <!--Scroll button start-->
-<button onclick="topFunction()" id="myBtnn" >Top</button>
+<button onclick="topFunction()" id="myBtnn" ><i class="arrow up"></i></button>
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtnn");
