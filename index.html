@@ -381,6 +381,45 @@ transform: rotate(-135deg);
 -webkit-transform: rotate(-135deg);
 }
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+    </script>
+
+    <script>
+
+ 
+
+      // Function to check internet connection
+
+      function checkInternetConnection() {
+
+ 
+
+        // Detecting the internet connection
+
+        var online = navigator.onLine;
+
+        if (!online) {
+
+ alert("You are offline! Please connect to internet");
+
+          // Showing alert when connection is not available
+
+          //$("#message").show().html("No internet connection available");
+
+        }
+
+      }
+
+ 
+
+      // Setting interval to 3 seconds
+
+      setInterval(checkInternetConnection, 3000);
+
+    </script>
+
 </head>
 
 
@@ -442,11 +481,10 @@ function closeNav() {
 <div class="dropdown">
   <a href="#contact">contact</a>
   <div class="dropdown-content">
-  <oi><a href="mailto:prateekkv14@gmail.com">Gmail</a>
+  <oi><a href="mailto:prateekkv14@gmail.com">Email</a>
   <a href="tel:+918867913376">Phone</a>
   </oi></div>
 </div>
-
 </div>
 
 
@@ -490,8 +528,8 @@ window.onclick = function(event) {
 
 
 
-</pre>
-<p1><b><i><marquee style="font-size:20pt; height=35px; width=100%" scrollamount="12"  direction="left" position="fixed" behavior="" bgcolor="cyan"  onmouseover="this.stop()" onmouseout="this.start()">HELLO! WELCOME!!</marquee></i></b></p1>
+</pre></div>
+<p1><b><i><marquee style="white-space: pre-wrap; font-size:20pt; height=35px; width=100%" scrollamount="12"  direction="left" position="fixed" behavior="" bgcolor="cyan"  onmouseover="this.stop()" onmouseout="this.start()">HELLO! WELCOME!!</marquee></i></b></p1>
 <pre>
 </pre>
 
