@@ -402,7 +402,7 @@ transform: rotate(-135deg);
 
         if (!online) {
 
- alert("You are offline! Please connect to internet");
+ //alert("You are offline! Please connect to internet");
 
           // Showing alert when connection is not available
 
@@ -420,6 +420,12 @@ transform: rotate(-135deg);
 
     </script>
 
+<style>
+.bgsty{
+color: indigo;
+background-color: lightgreen;
+border-left: 6px solid red;
+</style>
 </head>
 
 
@@ -538,12 +544,12 @@ window.onclick = function(event) {
 <pre style="white-space: pre-wrap;">
 <h1>Prateek K V</h1>
 
-<h1 style="color:blue;"><span style="background-color:violet">Experience:</span></h1><p style="font-size:22px;"><a href="https://www.talentrecruit.com/"target="_blank">Talent Recruit Software Pvt Ltd</a>, Bengaluru 
+<h1 class="bgsty">Experience:</span></h1><p style="font-size:22px;"><a href="https://www.talentrecruit.com/"target="_blank">Talent Recruit Software Pvt Ltd</a>, Bengaluru 
 July 2021 - PRESENT
 Designation: QA Engineer
 </p>
 
-<h1 style="color:blue;"><span style="background-color:violet">Education:</h1></span><p style="font-size:22px;"><a href="https://www.presidencyuniversity.in" target="_blank">Presidency University</a>, Bengaluru
+<h1 style="color:blue;" class="bgsty">Education:</h1></span><p style="font-size:22px;"><a href="https://www.presidencyuniversity.in" target="_blank">Presidency University</a>, Bengaluru
 August 2017 - June 2021
 Bachelors Of Technology in 
 Computer Science And Engineering
@@ -687,7 +693,7 @@ else
 </div>
 
 <!--Scroll button start-->
-<button onclick="topFunction()" id="myBtnn" ><i class="arrow up"></i></button>
+<button onclick="topFunction()" title="top" id="myBtnn" ><i class="arrow up"></i></button>
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtnn");
