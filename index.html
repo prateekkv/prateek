@@ -22,7 +22,7 @@ while (cap != captcha){
 }
 
 // See Note 2.
-alert("Yippee!! you have entered Correct text!");
+alert("Yippee!! you have entered Correct number!");
 
 </script>
 
@@ -673,18 +673,45 @@ else
 }
 </script>
 
+<script>
+function diss(message) {
+var bt = document.getElementById('dis');
+if (message.value == "") {
+console.log('Disabled');
+bt.setAttribute("disabled","true");
+}
+else{
+console.log('Enabled');
+bt.removeAttribute("disabled");
+
+}
+}
+</script>
+
+<script>
+function dissub() {
+document.getElementById("dis").disabled = true;
+}
+</script>
+
+<script>
+function dissub() {
+document.getElementById("dis").disabled = true;
+}
+</script>
+
 <center><h1>Send a whatsapp message</h1>
 <form name="whatsapp_chat" onsubmit="return validate_activity()">
   
   <label for="message"> </label>
-  <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75"></textarea> <br>
+  <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75" onKeyup="diss(this)"></textarea> <br>
   <br>
-  <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px;">
+  <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px;" id="dis" disabled="true">
  		<span>S</span>
 		<span>E</span>
 		<span>N</span>
 		<span>D</span></div></button><br><br>
-<center><input type="reset" value="Reset" style="cursor:pointer; font-size: 20px"></center>
+<center><input type="reset" value="Reset" style="cursor:pointer; font-size: 20px" onclick="dissub()"></center>
 		
 </center>
 </form>
@@ -721,20 +748,42 @@ else
 }
 </script>
 
+<script>
+function diss2() {
+var bt = document.getElementById('dis2');
+if (messagee.value == "" || body.value == "" ){
+console.log('Disabled');
+bt.setAttribute("disabled","true");
+}
+else{
+console.log('Enabled');
+bt.removeAttribute("disabled");
+
+}
+}
+</script>
+
+<script>
+function dissub2() {
+document.getElementById("dis2").disabled = true;
+}
+</script>
+
+
 <center><h1>Send Mail</h1>
 <form name="mail_send" onsubmit="return validate_activity()">
   
-  <label for="message">Subject: </label>
-  <textarea type="text" id="message" placeholder="Type Subject Here" rows="2" cols="50"></textarea> <br>
+  <label for="message">Subject:<sup style= "color:red; cursor:pointer" title="Required">*</sup> </label>
+  <textarea type="text" id="messagee" placeholder="Type Subject Here" rows="2" cols="50" onKeyup="diss2(this)"></textarea> <br>
   <br>
-  <label for="body">Body:  </label>
-  <textarea type="text" id="body" placeholder="Type a message here" rows="4" cols="50"></textarea> <br><br><br>
-  <button class="anim" onclick="mail()" style="cursor:pointer; border-radius:12px" >
+  <label for="body">Body:<sup style= "color:red; cursor:pointer" title="Required">*</sup>  </label>
+  <textarea type="text" id="body" placeholder="Type message here" rows="4" cols="50" onKeyup="diss2(this)"></textarea> <br><br><br>
+  <button class="anim" onclick="mail()" style="cursor:pointer; border-radius:12px" id="dis2" disabled="true">
 		<span>S</span>
 		<span>E</span>
 		<span>N</span>
 		<span>D</span></button><br><br>
-<center><input type="reset" value="Reset" style="cursor:pointer; font-size: 20px"></center>
+<center><input type="reset" value="Reset" style="cursor:pointer; font-size: 20px" onclick="dissub2()"></center>
 </center>
 </form>
 <!--mail end-->
