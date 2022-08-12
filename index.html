@@ -482,6 +482,50 @@ border-left: 20px solid firebrick;
     </script>
 
 
+<style>
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+</style>
+
 
 </head>
 
@@ -694,11 +738,7 @@ document.getElementById("dis").disabled = true;
 }
 </script>
 
-<script>
-function dissub() {
-document.getElementById("dis").disabled = true;
-}
-</script>
+
 
 <center><h1>Send a whatsapp message</h1>
 <form name="whatsapp_chat" onsubmit="return validate_activity()">
@@ -729,7 +769,7 @@ document.getElementById("dis").disabled = true;
 <!--mail start-->
 <script>
 function mail() {
-var message = document.mail_send.message;
+var message = document.mail_send.messagee;
 if (message.value == "" || body.value=="")
     {
         alert("Please type both Subject and Body!");
@@ -738,7 +778,7 @@ if (message.value == "" || body.value=="")
     }
 else
   {
-  let message = document.mail_send.message.value;
+  let message = document.mail_send.messagee.value;
   let body = document.mail_send.body.value;
   let url = "mailto:prateekkv14@gmail.com";
   let end_url = `${url}?subject=${message}&body=${body}`;
@@ -773,7 +813,7 @@ document.getElementById("dis2").disabled = true;
 <center><h1>Send Mail</h1>
 <form name="mail_send" onsubmit="return validate_activity()">
   
-  <label for="message">Subject:<sup style= "color:red; cursor:pointer" title="Required">*</sup> </label>
+  <label for="messagee">Subject:<sup style= "color:red; cursor:pointer" title="Required">*</sup> </label>
   <textarea type="text" id="messagee" placeholder="Type Subject Here" rows="2" cols="50" onKeyup="diss2(this)"></textarea> <br>
   <br>
   <label for="body">Body:<sup style= "color:red; cursor:pointer" title="Required">*</sup>  </label>
@@ -798,11 +838,20 @@ document.getElementById("dis2").disabled = true;
 </div>
 </div>
 
+<!--Snackbar for top button start-->
 
+<div id="snackbar">Navigated back to Top!!</div>
 
+<script>
+function sncbar() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
 
 <!--Scroll button start-->
-<button onclick="topFunction()" title="Top" id="myBtnn" ><i class="arrow up"></i></button>
+<button onclick="topFunction(), sncbar()" title="Top" id="myBtnn" ><i class="arrow up"></i></button>
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtnn");
