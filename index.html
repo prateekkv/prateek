@@ -526,6 +526,64 @@ border-left: 20px solid firebrick;
 }
 </style>
 
+<style>
+
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-bottomformbutton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 72px;
+  right: 2px;
+  width: 75px;
+}
+
+/* The popup form - hidden by default */
+.form-bottompopup {
+  display: none;
+  position: fixed;
+  bottom: 78px;
+  right: 10px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.bottomform-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: lightgreen;
+}
+
+
+
+/* Set a style for the close button */
+.bottomform-container .btn {
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.9;
+  
+}
+
+
+/* Add a red background color to the cancel button */
+.bottomform-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.bottomform-container .btn:hover, .open-bottomformbutton:hover {
+  opacity: 1;
+}
+</style>
 
 </head>
 
@@ -872,6 +930,50 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+</script>
+
+<button class="open-bottomformbutton" onclick="openbottomForm()"><img src="https://drive.google.com/uc?export=view&id=1T8Xvaa9hzppN_7fqp6vsOiq0bbm9DDV-" alt="know more" width="50" height="50"></a></button>
+
+<div class="form-bottompopup" id="mybottomForm">
+
+  <form action="javascript:noreturning(); return false;" class="bottomform-container">
+    <h1><center>Hello!!</center></h1>
+
+<button onclick="chatbt1()" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#ec9688'; this.style.color='blue'" onMouseOut="this.style.backgroundColor=''; this.style.color=''" > Name </button>
+<button onclick="chatbt2()" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#ec9688'; this.style.color='blue'" onMouseOut="this.style.backgroundColor=''; this.style.color=''" > Email ID </button>
+<button onclick="chatbt3()" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#ec9688'; this.style.color='blue'" onMouseOut="this.style.backgroundColor=''; this.style.color=''"> Mobile No. </button>
+<p id="bottomdemo">Click on the button</p>
+<br/>
+    
+
+    
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openbottomForm() {
+  document.getElementById("mybottomForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("mybottomForm").style.display = "none";
+}
+</script>
+
+<script>
+function chatbt1() {
+document.getElementById("bottomdemo").innerHTML = "Prateek K V";
+}
+
+function chatbt2() {
+document.getElementById("bottomdemo").innerHTML = "<span><a href = 'mailto:prateekkv14@gmail.com'  target= '_blank'>prateekkv14@gmail.com</a></span>";
+}
+
+function chatbt3() {
+document.getElementById("bottomdemo").innerHTML = "<span><a href = 'tel:+918867913376'>+918867913376</a></span>";
+}
+
 </script>
 
 <!--splitting of screen end-->
