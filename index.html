@@ -4,7 +4,7 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
 <script>
 captcha=Math.floor(Math.random()*100000);
 cap = parseInt(prompt("Enter " + captcha + " below to continue"), 10);
@@ -585,6 +585,33 @@ border-left: 20px solid firebrick;
 }
 </style>
 
+<!-- social media icons style start-->
+<style>
+        .social-media-icons {
+            position: fixed;
+            top: 60%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .social-media-icons a {
+            display: block;
+            margin-bottom: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+<!-- social media icons style end-->
+
 </head>
 
 
@@ -802,7 +829,7 @@ document.getElementById("dis").disabled = true;
 <form name="whatsapp_chat" onsubmit="return validate_activity()">
   
   <label for="message"> </label>
-  <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="75" onKeyup="diss(this)"></textarea> <br>
+  <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="70" onKeyup="diss(this)"></textarea> <br>
   <br>
   <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px;" id="dis" disabled="true">
  		<span>S</span>
@@ -886,8 +913,19 @@ document.getElementById("dis2").disabled = true;
 </form>
 <!--mail end-->
 
+<!--side social media icons start-->
+<div class="social-media-icons">
+	<a href="https://www.linkedin.com/in/prateek-kv-7352501b3"  target="_blank"><i class="fab fa-linkedin-in" title="Linkedin"></i></a>
+	<a href="https://api.whatsapp.com/send?phone=918867913376" target="_blank"><i class="fab fa-whatsapp" title="Whatsapp"></i></a>
+	<a href="mailto:prateekkv14@gmail.com" target="_blank"><i class="far fa-envelope-open" title="Mail"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100005924508004" target="_blank"><i class="fab fa-facebook-f" title="Facebook"></i></a>
+        <a href="https://www.instagram.com/prateek14_" target="_blank"><i class="fab fa-instagram" title="Instagram"></i></a>
+        
+    </div>
+
+<!--side social media icons end-->
+
 <br><br>
-<center style="background-color:violet;width:100%"><a href="https://www.instagram.com/prateek14_" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1AQr6MYvJBhDhjA9tbIxtcNwlgJ0vS2iz"width="50" height="50"></a> <a href="https://www.facebook.com/profile.php?id=100005924508004" target="_blank"><img src="https://drive.google.com/uc?export=view&id=11oxk6JGADHLUC9JNsEVlSH2aunwiui9_"width="50" height="50"></a> <a href="https://api.whatsapp.com/send?phone=918867913376" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1YlvVrQbFFO9icXMJxU00NtnRx-F3OpMk"width="50" height="50"></a> <a href="mailto:prateekkv14@gmail.com" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1yhpJ458DtEdrUCFnVGrYYepphElRitT_"width="50" height="50"></a> <a href="https://www.linkedin.com/in/prateek-kv-7352501b3" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1PIDPQB3OLwSItHU5oCMQdapyT68cVk4H"width="50" height="50"></a></center>
 
 
 
