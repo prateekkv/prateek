@@ -218,6 +218,7 @@ background-color:lightgrey;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  
 }
 
 .close:hover,
@@ -225,6 +226,7 @@ background-color:lightgrey;
   color: #000;
   text-decoration: none;
   cursor: pointer;
+  
 }
 </style>
 
@@ -372,7 +374,7 @@ html {
   display: none;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 25px;
   z-index: 99;
   font-size: 18px;
   border: none;
@@ -526,7 +528,37 @@ border-left: 20px solid firebrick;
 }
 </style>
 
+
+<!--Chatbot style start-->
 <style>
+        
+        .chat-message {
+            margin-bottom: 10px;
+        }
+        .chat-message .user {
+            font-weight: bold;
+	    color: red;
+	    background-color: ;
+        }
+        .chat-message .bot {
+            color: darkgreen;
+	    background-color: ;
+        }
+        .chip {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #ccc;
+            border-radius: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+        .chip.active {
+            background-color: blue;
+            color: white;
+        }
+        
+
 
 
 
@@ -537,9 +569,11 @@ border-left: 20px solid firebrick;
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 72px;
+  bottom: 78px;
   right: 2px;
   width: 75px;
+  
+
 }
 
 /* The popup form - hidden by default */
@@ -550,13 +584,17 @@ border-left: 20px solid firebrick;
   right: 10px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+  width: 270px;
 }
 
 /* Add styles to the form container */
 .bottomform-container {
   max-width: 300px;
+  max-height: 500px;
   padding: 10px;
-  background-color: lightgreen;
+  background-color: #CAF1DE;
+   
+  
 }
 
 
@@ -568,9 +606,10 @@ border-left: 20px solid firebrick;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  margin-bottom:1px;
   opacity: 0.9;
   
+
 }
 
 
@@ -583,7 +622,21 @@ border-left: 20px solid firebrick;
 .bottomform-container .btn:hover, .open-bottomformbutton:hover {
   opacity: 1;
 }
+
+.form-container {
+            height: auto;
+	    max-height: 350px;
+            overflow-y: auto;
+        }
+
 </style>
+
+<!--Chatbot style end-->
+
+
+
+
+
 
 <!-- social media icons style start-->
 <style>
@@ -625,7 +678,7 @@ border-left: 20px solid firebrick;
 
 <!--side menu body start-->
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" title="Close">&times;</a>
 <a href="#" id="myBtn">About</a>
 
 <!-- The Modal -->
@@ -633,13 +686,12 @@ border-left: 20px solid firebrick;
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
+   <span class="close" title="Close">&times;</span>
     <p4 style="font-size:30px;"> I am Prateek KV, Started my career as a QA Engineer at Talent Recruit Software Pvt Ltd. I have completed B.Tech from Presidency University Bengaluru in Computer Science And Engineering</p4>
   </div>
 
 </div>
   <a href="https://prateekkv.github.io/prateek-academic/">Academics</a>
-  <a href="https://sites.google.com/view/quickcoding/home" target="_blank">Other</a>
 <div class="dropdown">
   <a href="#">Contact</a>
   <div class="dropdown-content">
@@ -970,24 +1022,12 @@ function topFunction() {
 }
 </script>
 
-<button class="open-bottomformbutton" onclick="openbottomForm()"><img src="https://drive.google.com/uc?export=view&id=1T8Xvaa9hzppN_7fqp6vsOiq0bbm9DDV-" alt="know more" width="50" height="50"></a></button>
 
+<!-- Chatbot start-->
+
+<button class="open-bottomformbutton" onclick="openbottomForm()" title="Chat with Bot"><img src="https://drive.google.com/uc?export=view&id=14aIxQEPP7GLoYlkSye6iODK0OuHTi0AQ" alt="Chat" width="50" height="50"></a></button>
 <div class="form-bottompopup" id="mybottomForm">
-
-  <form action="javascript:noreturning(); return false;" class="bottomform-container">
-    <h1><center>Hello!!</center></h1>
-
-<button onclick="chatbt1()" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#ec9688'; this.style.color='blue'" onMouseOut="this.style.backgroundColor=''; this.style.color=''" > Name </button>
-<button onclick="chatbt2()" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#ec9688'; this.style.color='blue'" onMouseOut="this.style.backgroundColor=''; this.style.color=''" > Email ID </button>
-<button onclick="chatbt3()" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#ec9688'; this.style.color='blue'" onMouseOut="this.style.backgroundColor=''; this.style.color=''"> Mobile No. </button>
-<p id="bottomdemo">Click on the button</p>
-<br/>
-    
-
-    
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>
+<form action="javascript:noreturning(); return false;" class="bottomform-container">
 
 <script>
 function openbottomForm() {
@@ -999,20 +1039,54 @@ function closeForm() {
 }
 </script>
 
+
+    <div class="chat-container form-container">
+        <div class="chat-message bot">Hello! How can I assist you today?</div><br/>
+    </div>
+    <div>
+        <pre><div class="chip" onclick="sendMessage('Email ID')">Email ID</div> <div class="chip" onclick="sendMessage('Current Designation')">Current Designation</div> <br/>
+<div class="chip" onclick="sendMessage('Mobile Number')">Mobile Number</div> <div class="chip" onclick="sendMessage('Notice Period')">Notice Period</div> <br/>
+<div class="chip" onclick="sendMessage('Current Employer')">Current Employer</div> </pre>
+    </div>
+<button type="button" class="btn cancel" onclick="closeForm()">Close</button></form>
 <script>
-function chatbt1() {
-document.getElementById("bottomdemo").innerHTML = "Prateek K V";
-}
+        function sendMessage(message) {
+            var chatContainer = document.querySelector('.chat-container');
+            var chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.innerHTML = '<span class="user">User:</span> ' + message;
+            chatContainer.appendChild(chatMessage);
+            
+            // Simulate bot response
+            setTimeout(function() {
+                var botMessage = document.createElement('div');
+                botMessage.classList.add('chat-message', 'bot');
+                botMessage.innerHTML = '<span class="bot">Bot:</span> ' + getBotResponse(message);
+                chatContainer.appendChild(botMessage);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }, 400);
+        }
+        
+        function getBotResponse(message) {
+            switch (message) {
+                case 'Email ID':
+                    return 'You can send me a mail at <span><a href = "mailto:prateekkv14@gmail.com"  target= "_blank">prateekkv14@gmail.com</a></span>';
+                case 'Current Designation':
+                    return 'QA Engineer';
+		case 'Notice Period':
+                    return '2 Months';
+                case 'Mobile Number':
+                    return 'You can contact me at <a href="tel:+918867913376">+918867913376</a>';
+		case 'Current Employer':
+                    return '<a href="https://www.talentrecruit.com" target="_blank">Talent Recruit software Pvt Ltd</a>';
+                default:
+                    return 'I apologize, I am not programmed to answer that question.';
+            }
+        }
 
-function chatbt2() {
-document.getElementById("bottomdemo").innerHTML = "<span><a href = 'mailto:prateekkv14@gmail.com'  target= '_blank'>prateekkv14@gmail.com</a></span>";
-}
+    </script>
 
-function chatbt3() {
-document.getElementById("bottomdemo").innerHTML = "<span><a href = 'tel:+918867913376'>+918867913376</a></span>";
-}
-
-</script>
+<!--chatbot end-->
 
 <!--splitting of screen end-->
 <!-- page loader ending start-->
