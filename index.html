@@ -754,7 +754,7 @@ function closeNav() {
   <a class="active" href="https://prateekkv.github.io/prateek/">Home</a>
   <a href="https://prateekkv.github.io/prateek-achievements/" target="_blank">Achievements</a>
   <a href="https://prateekkv.github.io/prateek-project/" target="_blank">Project</a>
-  <a href="https://drive.google.com/uc?export=download&id=1wa4U6FvyFtONmlcmp1osjXBj1MCFAPw8">Download Resume</a>
+  <a href="https://drive.google.com/uc?export=download&id=1wa4U6FvyFtONmlcmp1osjXBj1MCFAPw8" onclick="downloadnotification()">Download Resume</a>
 
 <div class="dropdown">
   <a href="#contact">Contact</a>
@@ -765,7 +765,29 @@ function closeNav() {
 </div>
 </div>
 
+<!-- system notification on downloading resume start-->
 
+<script>
+		function downloadnotification() {
+			if (!("Notification" in window)) {
+				alert("Resume downloaded Successfully!");
+			}
+
+			else if (Notification.permission === "granted") {
+				var notification = new Notification("Resume downloaded Successfully!");
+			}
+
+			else if (Notification.permission !== 'denied') {
+				Notification.requestPermission(function (permission) {
+					if (permission === "granted") {
+						var notification = new Notification("Resume downloaded Successfully!");
+					}
+				});
+			}
+		}
+	</script>
+
+<!-- system notification on downloading resume end-->
 
 
 <script>
