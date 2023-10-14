@@ -671,6 +671,15 @@ border-left: 20px solid firebrick;
     </style>
 <!-- social media icons style end-->
 
+<style>
+.searchbar{
+
+position: absolute;
+top: 10px;
+right: 10px;
+}
+
+</style>
 </head>
 
 
@@ -681,6 +690,25 @@ border-left: 20px solid firebrick;
 <div id="loader" class="center"></div>
 <!-- page loader animation initialization end-->
 
+
+<!-- Searchbar start-->
+
+<div class="searchbar">
+<input type="search" id="searchInput" placeholder="Search within page">
+<button onclick="searchWithinPage()">Search</button>
+</div>
+<script>
+        function searchWithinPage() {
+            var searchTerm = document.getElementById("searchInput").value;
+            if (searchTerm) {
+                window.find(searchTerm);
+            } else {
+                alert("Please enter a search term.");
+            }
+        }
+    </script>
+
+<!-- Searchbar end-->
 
 <!--side menu body start-->
 <div id="mySidenav" class="sidenav">
@@ -1031,7 +1059,7 @@ function topFunction() {
 
 <!-- Chatbot start-->
 
-<button class="open-bottomformbutton" onclick="openbottomForm()" title="Chat with Bot"><img src="https://drive.google.com/uc?export=view&id=14aIxQEPP7GLoYlkSye6iODK0OuHTi0AQ" alt="Chat" width="50" height="50"></a></button>
+<button class="open-bottomformbutton" onclick="openbottomForm()" title="Chat with Bot"><img src="https://drive.google.com/uc?export=view&id=1ph3K-aHUfDHcq7MAE0Ieqx8x7XJZ5MJE" alt="Chat" width="70" height="70"></a></button>
 <div class="form-bottompopup" id="mybottomForm">
 <form action="javascript:noreturning(); return false;" class="bottomform-container">
 
