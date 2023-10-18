@@ -11,7 +11,7 @@ cap = parseInt(prompt("Enter " + captcha + " below to continue"), 10);
 console.log("You Entered" + cap);
 
 // 1. Do something forever
-while (cap != captcha){
+while (cap !== captcha){
     // 2. store the last answer
     cap = parseInt(prompt("You have entered invalid number, Enter " + captcha), 10);
     console.log(cap);
@@ -183,9 +183,7 @@ width:100%;
 font-size:25px;
 }
 
-#clsfnt{
-background-color:lightgrey;
-}
+
 </style>
 
 <style>
@@ -446,6 +444,7 @@ transform: rotate(-135deg);
 color: darkblue;
 background-color: #FF8C00;
 border-left: 20px solid firebrick;
+}
 </style>
 
 
@@ -534,6 +533,7 @@ border-left: 20px solid firebrick;
         
         .chat-message {
             margin-bottom: 10px;
+	    color:black;
         }
         .chat-message .user {
             font-weight: bold;
@@ -680,16 +680,112 @@ right: 10px;
 }
 
 </style>
+
+<style>
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  top: 7px;
+  right: 260px;
+
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+body {
+            background-color: lightgrey;
+            color: black;
+        }
+        
+.dark-mode {
+			background-color: black;
+			color: white;
+			transition: background-color 0.5s ease;
+		}
+        
+        
+</style>
+
+
 </head>
 
 
 
-<body id="clsfnt" onload="startTime()">
+<body onload="startTime()">
 
 <!-- page loader animation initialization start-->
 <div id="loader" class="center"></div>
 <!-- page loader animation initialization end-->
 
+
+<!-- dark mode start-->
+
+<label class="switch">
+		<input type="checkbox" onclick="toggleDarkMode()" >
+		<span class="slider round" title="Switch Mode"></span>
+	</label>
+
+	<script>
+		function toggleDarkMode() {
+			var body = document.body;
+			body.classList.toggle("dark-mode");
+		}
+	</script>
+
+<!-- dark mode end-->
 
 <!-- Searchbar start-->
 
@@ -721,7 +817,7 @@ right: 10px;
   <!-- Modal content -->
   <div class="modal-content">
    <span class="close" title="Close">&times;</span>
-    <p4 style="font-size:30px;"> I am Prateek KV, Started my career as a QA Engineer at Talent Recruit Software Pvt Ltd. I have completed B.Tech from Presidency University Bengaluru in Computer Science And Engineering</p4>
+    <p4 style="font-size:30px; color:black;"> I am Prateek KV, Started my career as a QA Engineer at Talent Recruit Software Pvt Ltd. I have completed B.Tech from Presidency University Bengaluru in Computer Science And Engineering</p4>
   </div>
 
 </div>
@@ -893,21 +989,13 @@ function checkTime(i) {
 <!--whatsapp start-->
 <script>
 function whatsapp() {
-var message = document.whatsapp_chat.message;
-if (message.value == "")
-    {
-        alert("Please type some message.");
-        message.focus();
-        return false;
-    }
-else
-  {
+
   let message = document.whatsapp_chat.message.value;
   let url = "https://wa.me/918867913376";
   let end_url = `${url}?text=${message}`;
   window.open(end_url);
- }    
-}
+ } 
+
 </script>
 
 <script>
@@ -939,7 +1027,7 @@ document.getElementById("dis").disabled = true;
   <label for="message"> </label>
   <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="70" onKeyup="diss(this)"></textarea> <br>
   <br>
-  <button div class="anim" onclick="whatsapp()" style="cursor:pointer; border-radius:12px;" id="dis" disabled="true">
+  <button div class="anim" onclick="whatsapp(); whatsappsystemnotification()" style="cursor:pointer; border-radius:12px;" id="dis" disabled="true" type="button">
  		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -952,11 +1040,29 @@ document.getElementById("dis").disabled = true;
 <!--whatsapp end-->
 
 
+<!--whatsapp system notification start-->
+<script>
+		function whatsappsystemnotification() {
+			if (!("Notification" in window)) {
+				alert("You have been navigated to Whatsapp! Please Send the message");
+			}
+
+			else if (Notification.permission === "granted") {
+				var notification = new Notification("You have been navigated to Whatsapp! Please Send the message");
+			}
+
+			else if (Notification.permission !== 'denied') {
+				Notification.requestPermission(function (permission) {
+					if (permission === "granted") {
+						var notification = new Notification("You have been navigated to Whatsapp! Please Send the message");
+					}
+				});
+			}
+		}
+	</script>
 
 
-
-
-
+<!--whatsapp system notification end-->
 
 
 <!--mail start-->
@@ -1011,7 +1117,7 @@ document.getElementById("dis2").disabled = true;
   <br>
   <label for="body">Body:<sup style= "color:red; cursor:pointer" title="Required">*</sup>  </label>
   <textarea type="text" id="body" placeholder="Type message here" rows="4" cols="50" onKeyup="diss2(this)"></textarea> <br><br><br>
-  <button class="anim" onclick="mail()" style="cursor:pointer; border-radius:12px" id="dis2" disabled="true">
+  <button class="anim" onclick="mail(); mailsystemnotification()" style="cursor:pointer; border-radius:12px" id="dis2" disabled="true" type="button">
 		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -1020,6 +1126,32 @@ document.getElementById("dis2").disabled = true;
 </center>
 </form>
 <!--mail end-->
+
+
+<!--mail system notification start-->
+<script>
+		function mailsystemnotification() {
+			if (!("Notification" in window)) {
+				alert("You have been navigated to your mailing app! Please Send the mail");
+			}
+
+			else if (Notification.permission === "granted") {
+				var notification = new Notification("You have been navigated to your mailing app! Please Send the mail");
+			}
+
+			else if (Notification.permission !== 'denied') {
+				Notification.requestPermission(function (permission) {
+					if (permission === "granted") {
+						var notification = new Notification("You have been navigated to your mailing app! Please Send the mail");
+					}
+				});
+			}
+		}
+	</script>
+
+
+<!--mail system notification end-->
+
 
 <!--side social media icons start-->
 <div class="social-media-icons">
@@ -1097,12 +1229,12 @@ function closeForm() {
 
 
     <div class="chat-container form-container">
-        <div class="chat-message bot">Hello! How can I assist you today?</div><br/>
+        <div class="chat-message bot" style="color:black;">Hello! How can I assist you today?</div><br/>
     </div>
     <div>
-        <pre><div class="chip" onclick="sendMessage('Email ID')">Email ID</div> <div class="chip" onclick="sendMessage('Current Designation')">Current Designation</div> <br/>
-<div class="chip" onclick="sendMessage('Mobile Number')">Mobile Number</div> <div class="chip" onclick="sendMessage('Notice Period')">Notice Period</div> <br/>
-<div class="chip" onclick="sendMessage('Current Employer')">Current Employer</div> </pre>
+        <pre><div class="chip" onclick="sendMessage('Email ID')" style="color:black;">Email ID</div> <div class="chip" onclick="sendMessage('Current Designation')" style="color:black;">Current Designation</div> <br/>
+<div class="chip" onclick="sendMessage('Mobile Number')" style="color:black;">Mobile Number</div> <div class="chip" onclick="sendMessage('Notice Period')" style="color:black;">Notice Period</div> <br/>
+<div class="chip" onclick="sendMessage('Current Employer')" style="color:black;">Current Employer</div> </pre>
     </div>
 <button type="button" class="btn cancel" onclick="closeForm()">Close</button></form>
 <script>
@@ -1143,6 +1275,16 @@ function closeForm() {
     </script>
 
 <!--chatbot end-->
+
+<!--alert on closing tab or reloading start-->
+<script>
+		window.onbeforeunload = function(event) {
+			event.preventDefault();
+			event.returnValue = "Are you sure you want to leave?";
+		};
+	</script>
+<!--alert on closing tab or reloading end-->
+
 
 <!--splitting of screen end-->
 <!-- page loader ending start-->
