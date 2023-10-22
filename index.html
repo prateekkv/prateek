@@ -371,9 +371,9 @@ html {
 #myBtnn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 25px;
-  z-index: 99;
+  bottom: 50px;
+  right: 18px;
+  z-index: 1;
   font-size: 18px;
   border: none;
   outline: none;
@@ -575,7 +575,7 @@ border-left: 20px solid firebrick;
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 78px;
+  bottom: 110px;
   right: 2px;
   width: 75px;
   
@@ -586,7 +586,7 @@ border-left: 20px solid firebrick;
 .form-bottompopup {
   display: none;
   position: fixed;
-  bottom: 78px;
+  bottom: 60px;
   right: 10px;
   border: 3px solid #f1f1f1;
   z-index: 9;
@@ -648,7 +648,7 @@ border-left: 20px solid firebrick;
 <style>
         .social-media-icons {
             position: fixed;
-            top: 60%;
+            top: 55%;
             right: 20px;
             transform: translateY(-50%);
             display: flex;
@@ -681,6 +681,7 @@ right: 10px;
 
 </style>
 
+<!-- dark mode style start-->
 <style>
 .switch {
   position: absolute;
@@ -758,7 +759,110 @@ body {
         
         
 </style>
+<!-- dark mode style end-->
 
+<!--botton notification tray style and script start-->
+
+<style>
+    .notification-tray {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      z-index: 100;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+    }
+    
+    .notification-tray .header {
+      padding: 10px;
+      background-color: orange;
+      cursor: pointer;
+      color: black;
+position: relative;
+    }
+    
+    .notification-tray .content {
+      padding: 10px;
+      display: none;
+      color: black;
+position: relative;
+    }
+    
+    .notification-tray.expanded .content {
+      display: block;
+      max-height: 400px;
+      overflow: auto;
+position: relative;
+    }
+  </style>
+  
+  <script>
+    function appendToListwhatsappnotification() {
+  var list = document.getElementById("myList");
+  var listItem = document.createElement("li");
+  listItem.innerHTML = "Whatsapp Message sent sucessfully on";
+  var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.toLocaleString('default', { month: 'short' });
+  var year = currentDate.getFullYear();
+  var time = currentDate.toLocaleTimeString();
+
+  var formattedDateTime = ' ' +  day + ' ' + month + ' ' + year + ' at ' + time;
+  
+  var dateTimeNode = document.createTextNode(formattedDateTime);
+  listItem.appendChild(dateTimeNode);
+  
+  list.appendChild(listItem);
+}
+
+  </script>
+  
+  <script>
+    function appendToListmailnotification() {
+  var list = document.getElementById("myList");
+  var listItem = document.createElement("li");
+  listItem.innerHTML = "Mail sent sucessfully on";
+  var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.toLocaleString('default', { month: 'short' });
+  var year = currentDate.getFullYear();
+  var time = currentDate.toLocaleTimeString();
+
+  var formattedDateTime = ' ' +  day + ' ' + month + ' ' + year + ' at ' + time;
+  
+  var dateTimeNode = document.createTextNode(formattedDateTime);
+  listItem.appendChild(dateTimeNode);
+  
+  list.appendChild(listItem);
+}
+
+  </script>
+  
+<script>
+    function appendToListresumedownloadnotification() {
+  var list = document.getElementById("myList");
+  var listItem = document.createElement("li");
+  listItem.innerHTML = "Resume downloaded sucessfully on";
+  var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.toLocaleString('default', { month: 'short' });
+  var year = currentDate.getFullYear();
+  var time = currentDate.toLocaleTimeString();
+
+  var formattedDateTime = ' ' +  day + ' ' + month + ' ' + year + ' at ' + time;
+  
+  var dateTimeNode = document.createTextNode(formattedDateTime);
+  listItem.appendChild(dateTimeNode);
+  
+  list.appendChild(listItem);
+}
+
+  </script>
+<!-- botton notification tray style and script end-->
 
 </head>
 
@@ -850,7 +954,7 @@ function closeNav() {
   <a class="active" href="https://prateekkv.github.io/prateek/">Home</a>
   <a href="https://prateekkv.github.io/prateek-achievements/" target="_blank">Achievements</a>
   <a href="https://prateekkv.github.io/prateek-project/" target="_blank">Project</a>
-  <a href="https://drive.google.com/uc?export=download&id=1wa4U6FvyFtONmlcmp1osjXBj1MCFAPw8" onclick="downloadnotification()">Download Resume</a>
+  <a href="https://drive.google.com/uc?export=download&id=1wa4U6FvyFtONmlcmp1osjXBj1MCFAPw8" target="_blank" onclick="downloadnotification(); appendToListresumedownloadnotification()">Download Resume</a>
 
 <div class="dropdown">
   <a href="#contact">Contact</a>
@@ -1027,7 +1131,7 @@ document.getElementById("dis").disabled = true;
   <label for="message"> </label>
   <textarea type="text" id="message" placeholder="Type a message here to send on Whatsapp" rows="4" cols="70" onKeyup="diss(this)"></textarea> <br>
   <br>
-  <button div class="anim" onclick="whatsapp(); whatsappsystemnotification()" style="cursor:pointer; border-radius:12px;" id="dis" disabled="true" type="button">
+  <button div class="anim" onclick="whatsapp(); whatsappsystemnotification(); appendToListwhatsappnotification()" style="cursor:pointer; border-radius:12px;" id="dis" disabled="true" type="button">
  		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -1117,7 +1221,7 @@ document.getElementById("dis2").disabled = true;
   <br>
   <label for="body">Body:<sup style= "color:red; cursor:pointer" title="Required">*</sup>  </label>
   <textarea type="text" id="body" placeholder="Type message here" rows="4" cols="50" onKeyup="diss2(this)"></textarea> <br><br><br>
-  <button class="anim" onclick="mail(); mailsystemnotification()" style="cursor:pointer; border-radius:12px" id="dis2" disabled="true" type="button">
+  <button class="anim" onclick="mail(); mailsystemnotification(); appendToListmailnotification()" style="cursor:pointer; border-radius:12px" id="dis2" disabled="true" type="button">
 		<span>S</span>
 		<span>E</span>
 		<span>N</span>
@@ -1152,6 +1256,23 @@ document.getElementById("dis2").disabled = true;
 
 <!--mail system notification end-->
 
+
+<!--bottom notification tray start-->
+  <div class="notification-tray">
+    <div class="header" onclick="toggleTray()">Notifications</div>
+    <div class="content">
+      <p><strong>All the received notifications will display here</strong></p>
+      <ul id="myList"></ul>
+    </div>
+  </div>
+
+<script>
+    function toggleTray() {
+      var tray = document.querySelector('.notification-tray');
+      tray.classList.toggle('expanded');
+    }
+  </script>
+<!--bottom notification tray end-->
 
 <!--side social media icons start-->
 <div class="social-media-icons">
@@ -1275,6 +1396,7 @@ function closeForm() {
     </script>
 
 <!--chatbot end-->
+
 
 <!--alert on closing tab or reloading start-->
 <script>
