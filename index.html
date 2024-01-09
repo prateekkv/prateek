@@ -4,11 +4,14 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script>
-captcha=Math.floor(Math.random()*100000);
+const captcha=Math.floor(100000 + Math.random()*900000);
 cap = parseInt(prompt("Enter " + captcha + " below to continue"), 10);
 console.log("You Entered" + cap);
+
 
 // 1. Do something forever
 while (cap !== captcha){
@@ -103,7 +106,6 @@ body {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .topnav {
@@ -804,7 +806,7 @@ position: relative;
     function appendToListwhatsappnotification() {
   var list = document.getElementById("myList");
   var listItem = document.createElement("li");
-  listItem.innerHTML = "Whatsapp Message sent sucessfully on";
+  listItem.innerHTML = "Whatsapp Message sent successfully on";
   var currentDate = new Date();
   var day = currentDate.getDate();
   var month = currentDate.toLocaleString('default', { month: 'short' });
@@ -825,7 +827,7 @@ position: relative;
     function appendToListmailnotification() {
   var list = document.getElementById("myList");
   var listItem = document.createElement("li");
-  listItem.innerHTML = "Mail sent sucessfully on";
+  listItem.innerHTML = "Mail sent successfully on";
   var currentDate = new Date();
   var day = currentDate.getDate();
   var month = currentDate.toLocaleString('default', { month: 'short' });
@@ -846,7 +848,7 @@ position: relative;
     function appendToListresumedownloadnotification() {
   var list = document.getElementById("myList");
   var listItem = document.createElement("li");
-  listItem.innerHTML = "Resume downloaded sucessfully on";
+  listItem.innerHTML = "Resume downloaded successfully on";
   var currentDate = new Date();
   var day = currentDate.getDate();
   var month = currentDate.toLocaleString('default', { month: 'short' });
@@ -869,6 +871,7 @@ position: relative;
 
 
 <body onload="startTime()">
+
 
 <!-- page loader animation initialization start-->
 <div id="loader" class="center"></div>
@@ -894,7 +897,7 @@ position: relative;
 <!-- Searchbar start-->
 
 <div class="searchbar">
-<input type="search" id="searchInput" placeholder="Search within page">
+<input type="search" id="searchInput" placeholder="Search within the page">
 <button onclick="searchWithinPage()">Search</button>
 </div>
 <script>
@@ -925,7 +928,7 @@ position: relative;
   </div>
 
 </div>
-  <a href="https://prateekkv.github.io/prateek-academic/">Academics</a>
+  <a href="https://prateekkv.github.io/prateek-academic/" target="_blank">Academics</a>
 <div class="dropdown">
   <a href="#">Contact</a>
   <div class="dropdown-content">
