@@ -239,18 +239,21 @@ font-size:25px;
   width: 50%;
   position: absolute;
   overflow-x: hidden;
+  overflow-y: auto;
   padding-top: 20px;
 }
 
 .leftt {
   left: 0;
   background-color: ;
+  overflow-y: auto; /* Allow scrolling in the left section */
 }
 
 .rightt {
   word-wrap: break-word;
   right: 0;
   background-color: ;
+  overflow-y: auto; /* Allow scrolling in the right section */
   
 }
 
@@ -957,7 +960,7 @@ function closeNav() {
   <a class="active" href="https://prateekkv.github.io/prateek/">Home</a>
   <a href="https://prateekkv.github.io/prateek-achievements/" target="_blank">Achievements</a>
   <a href="https://prateekkv.github.io/prateek-project/" target="_blank">Project</a>
-  <a href="https://drive.google.com/uc?export=download&id=1wa4U6FvyFtONmlcmp1osjXBj1MCFAPw8" target="_blank" onclick="downloadnotification(); appendToListresumedownloadnotification()">Download Resume</a>
+  <a href="https://drive.google.com/uc?export=download&id=1pWS4UnS1YOsAbFZbLPWrF2-T5Pnvy-ZO" target="_blank" onclick="downloadnotification(); appendToListresumedownloadnotification()">Download Resume</a>
 
 <div class="dropdown">
   <a href="#contact">Contact</a>
@@ -1037,13 +1040,28 @@ window.onclick = function(event) {
 </pre>
 
 <!-- left side-->
-<div class="splitt leftt">
+<div class="splitt leftt", style="padding-left: 15px;">
 <pre style="white-space: pre-wrap;">
-<h1>Prateek K V</h1>
+<h1 style="font-size: 50px;">Prateek K V</h1>
 
-<h1 class="bgsty">Experience:</span></h1><p style="font-size:22px;"><a href="https://www.talentrecruit.com/"target="_blank">Talent Recruit Software Pvt Ltd</a>, Bengaluru 
-July 2021 - PRESENT
-Designation: QA Engineer
+<h1 class="bgsty">Experience:</span></h1><p style="font-size:22px;">QA Engineer at <a href="https://www.talentrecruit.com/"target="_blank">Talent Recruit Software Pvt Ltd</a>, Bengaluru 
+July 2021 - PRESENT<ul style="font-size:22px;">
+<li>Developing and executing comprehensive test plans, test cases, and scripts to ensure software quality and performance.</li>
+<li>Conducting functional, regression, performance, and user acceptance testing, identifying and documenting defects using Azure Devops.</li>
+<li>Collaborating with cross-functional teams to analyze requirements, ensuring high-quality deliverables.</li>
+<li>Automating testing processes using Python-Selenium, enhancing efficiency and test coverage.</li>
+<li>Maintaining detailed test documentation and reports to track progress and results.</li>
+<li>Participating in Agile ceremonies, providing input on design and development best practices to improve overall product quality.</li></ul></p>
+<h1 class="bgsty">Internship:</span></h1><p style="font-size:22px;">Data Science Intern at <a href="https://aivariant.com/"target="_blank">AiVariant</a>, Bengaluru 
+March 2024 - September 2024<ul style="font-size:22px;">
+<li>Assisted in collecting, cleaning, and preprocessing large datasets to ensure data integrity and usability.</li>
+<li>Conducted exploratory data analysis to identify trends and insights, contributing to data-driven decision-making.</li>
+<li>Supported the development and validation of predictive models using machine learning algorithms.</li>
+<li>Collaborated with cross-functional teams to translate business requirements into analytical solutions.</li>
+<li>Created visualizations and dashboards using tools like Tableau and Matplotlib to communicate findings effectively.</li>
+<li>Documented methodologies and results, enhancing team knowledge sharing and project reproducibility.</li>
+</ul>
+
 </p>
 
 <h1 class="bgsty">Education:</h1></span><p style="font-size:22px;"><a href="https://www.presidencyuniversity.in" target="_blank">Presidency University</a>, Bengaluru
@@ -1128,7 +1146,7 @@ document.getElementById("dis").disabled = true;
 
 
 
-<center><h1>Send a whatsapp message</h1>
+<center><h1 style="font-size: 50px;">Send a whatsapp message</h1>
 <form name="whatsapp_chat" onsubmit="return validate_activity()">
   
   <label for="message"> </label>
@@ -1216,7 +1234,7 @@ document.getElementById("dis2").disabled = true;
 </script>
 
 
-<center><h1>Send Mail</h1>
+<center><h1 style="font-size: 50px;">Send Mail</h1>
 <form name="mail_send" onsubmit="return validate_activity()">
   
   <label for="messagee">Subject:<sup style= "color:red; cursor:pointer" title="Required">*</sup> </label>
@@ -1279,7 +1297,7 @@ document.getElementById("dis2").disabled = true;
 
 <!--side social media icons start-->
 <div class="social-media-icons">
-	<a href="https://www.linkedin.com/in/prateek-kv-7352501b3"  target="_blank"><i class="fab fa-linkedin-in" title="Linkedin"></i></a>
+	<a href="https://in.linkedin.com/in/prateekkv"  target="_blank"><i class="fab fa-linkedin-in" title="Linkedin"></i></a>
 	<a href="https://api.whatsapp.com/send?phone=918867913376" target="_blank"><i class="fab fa-whatsapp" title="Whatsapp"></i></a>
 	<a href="mailto:prateekkv14@gmail.com" target="_blank"><i class="far fa-envelope-open" title="Mail"></i></a>
         <a href="https://www.facebook.com/profile.php?id=100005924508004" target="_blank"><i class="fab fa-facebook-f" title="Facebook"></i></a>
